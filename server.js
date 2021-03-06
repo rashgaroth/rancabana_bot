@@ -28,10 +28,10 @@ function handleEvent(event) {
     let balesan
     let bot = "bot"
   
-    if(event.message.text == "aib hai"){
+    if(event.message.text == "hai"){
       balesan = { type: 'text', text: "Halo juga :), kapan kita kedufan lagi?·" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib nisa"){
+    }else if(event.message.text == "Aib nisa".toLowerCase()){
       balesan = { type: 'text', text: "Ratu melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib ajis"){
@@ -52,7 +52,7 @@ function handleEvent(event) {
     }else if(event.message.text == "aib nopal"){
       balesan = { type: 'text', text: "Palqon" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "riskon"){
+    }else if(event.message.text == "aib riskon"){
       balesan = { type: 'text', text: "Garuk teroooos" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib bahrijar"){
