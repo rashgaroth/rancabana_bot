@@ -38,10 +38,10 @@ function handleEvent(event) {
       balesan = { type: 'text', text: "Raja melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib kemal"){
-      balesan = { type: 'text', text: "Jangan main main! saya punya gelar str.com" };
+      balesan = { type: 'text', text: "Guling Guling dulu skuy" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib frelly"){
-      balesan = { type: 'text', text: "Si dewa_poker" };
+      balesan = { type: 'text', text: "Si dewa_poker " };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib ami"){
       balesan = { type: 'text', text: "Si cupu_poker" };
@@ -53,13 +53,13 @@ function handleEvent(event) {
       balesan = { type: 'text', text: "Palqon" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib riskon"){
-      balesan = { type: 'text', text: "Garuk teroooos" };
+      balesan = { type: 'text', text: "Garuk teroooos \n anjay galer" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib bahrijar"){
-      balesan = { type: 'text', text: "Diem diem mematikan" };
+      balesan = { type: 'text', text: "Diem diem mematikan \n test"};
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib hizrian"){
-      balesan = { type: 'text', text: "Dufan kuy" };
+      balesan = { type: 'text', text: "Dufan kuy \n  ayam asix" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "aib bili"){
       balesan = { type: 'text', text: "Mabskuy dulu bro abis itu solat" };
