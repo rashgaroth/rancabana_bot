@@ -26,50 +26,50 @@ app.post('/callback', line.middleware(config), (req, res) => {
 function handleEvent(event) {
     let echo
     let balesan
+    let bot = "bot"
   
-    if(event.message.text == "hai"){
+    if(event.message.text == "aib hai"){
       balesan = { type: 'text', text: "Halo juga :), kapan kita kedufan lagi?·" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "nisa"){
+    }else if(event.message.text == "aib nisa"){
       balesan = { type: 'text', text: "Ratu melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "ajis"){
+    }else if(event.message.text == "aib ajis"){
       balesan = { type: 'text', text: "Raja melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "kemal"){
+    }else if(event.message.text == "aib kemal"){
       balesan = { type: 'text', text: "Jangan main main! saya punya gelar str.com" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "frelly"){
+    }else if(event.message.text == "aib frelly"){
       balesan = { type: 'text', text: "Si dewa_poker" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "ami"){
+    }else if(event.message.text == "aib ami"){
       balesan = { type: 'text', text: "Si cupu_poker" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "dwiyan"){
+    }else if(event.message.text == "aib dwiyan"){
       balesan = { type: 'text', text: "Sedang mencari kerang dalam kamar mandi" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "nopal"){
+    }else if(event.message.text == "aib nopal"){
       balesan = { type: 'text', text: "Palqon" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "riskon"){
       balesan = { type: 'text', text: "Garuk teroooos" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "bahrijar"){
+    }else if(event.message.text == "aib bahrijar"){
       balesan = { type: 'text', text: "Diem diem mematikan" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "hizrian"){
+    }else if(event.message.text == "aib hizrian"){
       balesan = { type: 'text', text: "Dufan kuy" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "bili"){
+    }else if(event.message.text == "aib bili"){
       balesan = { type: 'text', text: "Mabskuy dulu bro abis itu solat" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "syah"){
+    }else if(event.message.text == "aib syah"){
       balesan = { type: 'text', text: "Muka mmk" };
       return client.replyMessage(event.replyToken, balesan);
+    }else{
+       return
     }
- 
-    echo = { type: 'text', text: "Gak ngerti bro" };
-    return client.replyMessage(event.replyToken, echo);
 }
  
 // listen on port
