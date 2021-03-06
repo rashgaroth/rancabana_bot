@@ -28,44 +28,50 @@ function handleEvent(event) {
     let balesan
     let bot = "bot"
   
-    if(event.message.text == "hai"){
+    if(event.message.text.toLowerCase() == "hai"){
       balesan = { type: 'text', text: "Halo juga :), kapan kita kedufan lagi?·" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "Aib nisa".toLowerCase()){
+    }else if(event.message.text.toLowerCase().toLowerCase() == "Aib nisa".toLowerCase()){
       balesan = { type: 'text', text: "Ratu melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib ajis"){
+    }else if(event.message.text.toLowerCase().toLowerCase() == "aib ajis"){
       balesan = { type: 'text', text: "Raja melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib kemal"){
+    }else if(event.message.text.toLowerCase().toLowerCase() == "aib kemal"){
       balesan = { type: 'text', text: "Guling Guling dulu skuy" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib frelly"){
-      balesan = { type: 'text', text: "Si dewa_poker " };
+    }else if(event.message.text.toLowerCase().toLowerCase() == "aib frelly"){
+      balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib ami"){
-      balesan = { type: 'text', text: "Si cupu_poker" };
+    }else if(event.message.text.toLowerCase().toLowerCase() == "aib ami"){
+      balesan = { type: 'text', text: "Jangan ganggu kami, aku dan rani saling mencitai" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib dwiyan"){
+    }else if(event.message.text.toLowerCase() == "aib dwiyan"){
       balesan = { type: 'text', text: "Sedang mencari kerang dalam kamar mandi" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib nopal"){
+    }else if(event.message.text.toLowerCase() == "aib nopal"){
       balesan = { type: 'text', text: "Palqon" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib riskon"){
-      balesan = { type: 'text', text: "Garuk teroooos \n anjay galer" };
+    }else if(event.message.text.toLowerCase() == "aib riskon"){
+      balesan = { type: 'text', text: "Garuk teroooos\n anjay galer" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib bahrijar"){
+    }else if(event.message.text.toLowerCase() == "aib bahrijar"){
       balesan = { type: 'text', text: "Diem diem mematikan \n test"};
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib hizrian"){
+    }else if(event.message.text.toLowerCase() == "aib hizrian"){
       balesan = { type: 'text', text: "Dufan kuy \n  ayam asix" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib bili"){
+    }else if(event.message.text.toLowerCase() == "aib bili"){
       balesan = { type: 'text', text: "Mabskuy dulu bro abis itu solat" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text == "aib syah"){
+    }else if(event.message.text.toLowerCase() == "aib syah"){
       balesan = { type: 'text', text: "Muka mmk" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "melet kuy"){
+      balesan = { type: 'text', text: "@nisa.\n@Azis" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "anjing"){
+      balesan = { type: 'text', text: "Woi santai dong bangsat" };
       return client.replyMessage(event.replyToken, balesan);
     }else{
        return
