@@ -25,22 +25,47 @@ app.post('/callback', line.middleware(config), (req, res) => {
  
 function handleEvent(event) {
     let echo
+    let balesan
   
     if(event.message.text == "hai"){
-      echo = { type: 'text', text: "Halo juga :), kapan kita kedufan lagi?·" };
-      return client.replyMessage(event.replyToken, echo);
+      balesan = { type: 'text', text: "Halo juga :), kapan kita kedufan lagi?·" };
+      return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "nisa"){
-      echo = { type: 'text', text: "Ratu melet kita semua" };
-      return client.replyMessage(event.replyToken, echo);
+      balesan = { type: 'text', text: "Ratu melet kita semua" };
+      return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "ajis"){
-      echo = { type: 'text', text: "Raja melet kita semua" };
-      return client.replyMessage(event.replyToken, echo);
+      balesan = { type: 'text', text: "Raja melet kita semua" };
+      return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "kemal"){
-      echo = { type: 'text', text: "Jangan main main! saya punya gelar str.com" };
-      return client.replyMessage(event.replyToken, echo);
+      balesan = { type: 'text', text: "Jangan main main! saya punya gelar str.com" };
+      return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text == "frelly"){
-      echo = { type: 'text', text: "Ratu melet kita semua" };
-      return client.replyMessage(event.replyToken, echo);
+      balesan = { type: 'text', text: "Si dewa_poker" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "ami"){
+      balesan = { type: 'text', text: "Si cupu_poker" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "dwiyan"){
+      balesan = { type: 'text', text: "Sedang mencari kerang dalam kamar mandi" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "nopal"){
+      balesan = { type: 'text', text: "Palqon" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "riskon"){
+      balesan = { type: 'text', text: "Garuk teroooos" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "bahrijar"){
+      balesan = { type: 'text', text: "Diem diem mematikan" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "hizrian"){
+      balesan = { type: 'text', text: "Dufan kuy" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "bili"){
+      balesan = { type: 'text', text: "Mabskuy dulu bro abis itu solat" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text == "syah"){
+      balesan = { type: 'text', text: "Muka mmk" };
+      return client.replyMessage(event.replyToken, balesan);
     }
  
     echo = { type: 'text', text: "Gak ngerti bro" };
