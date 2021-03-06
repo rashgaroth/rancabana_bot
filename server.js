@@ -56,7 +56,7 @@ function handleEvent(event) {
       balesan = { type: 'text', text: "Garuk teroooos\n anjay galer" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "aib bahrijar"){
-      balesan = { type: 'text', text: "Diem diem mematikan \n test"};
+      balesan = { type: 'text', text: "Diem diem mematikan"};
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "aib hizrian"){
       balesan = { type: 'text', text: "Dufan kuy \n  ayam asix" };
@@ -72,6 +72,30 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "anjing"){
       balesan = { type: 'text', text: "Woi santai dong bangsat" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "memek"){
+      balesan = { type: 'text', text: "@Kominfo @Feminis_indonesia" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "kontol"){
+      balesan = { type: 'text', text: "@naufal" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "ngaceng"){
+      balesan = { type: 'text', text: "@kemal" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "rani"){
+      balesan = { type: 'text', text: "@ami \n maaf mi aku sedang berada di mimpinya dwiyan" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "ajis nisa"){
+      balesan = { type: 'text', text: "Melet-melet" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "hizrian ucha"){
+      balesan = { type: 'text', text: "@dufan_indonesia" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "pasar minggu"){
+      balesan = { type: 'text', text: "Guling Guling" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "canda ngaceng"){
+      balesan = { type: 'text', text: "Yeuu gua keluarin ni titit gua dengan sempak gua yang abadi" };
       return client.replyMessage(event.replyToken, balesan);
     }else{
        return
