@@ -97,6 +97,9 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase() == "canda ngaceng"){
       balesan = { type: 'text', text: "Yeuu gua keluarin ni titit gua dengan sempak gua yang abadi" };
       return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase() == "show event"){
+      balesan = { type: 'text', text: event.message.toString() };
+      return client.replyMessage(event.replyToken, balesan);
     }else{
        return
     }
