@@ -100,7 +100,11 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase() == "show event"){
       balesan = { type: 'text', text: event.message.toString() };
       return client.replyMessage(event.replyToken, balesan);
-    }else{
+    } else if(event.message.text.toLowerCase() == "berak mi?"){
+      balesan = {}
+      return client.replyMessage(event.replyToken, balesan);
+    }
+    else{
        return
     }
 }
