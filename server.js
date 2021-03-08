@@ -44,13 +44,16 @@ function handleEvent(event) {
       balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "frel"){
-      balesan = { type: 'text', text: "apaan anjing" };
+      balesan = { type: 'text', text: "epi siap epi siap epi siap" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "nis"){
       balesan = { type: 'text', text: "sisain risol 2 yak" };
       return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "jis"){
+      balesan = { type: 'text', text: "tumben ga bawa nasi uduxx" };
+      return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "mi"){
-      balesan = { type: 'text', text: "ohh si cupu poker itu?" };
+      balesan = { type: 'text', text: "kasih video tutorial main poker tuhh" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "pal"){
       balesan = { type: 'text', text: "adek lu mana pal? udah ga tahan nih" };
@@ -114,6 +117,9 @@ function handleEvent(event) {
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "mabok kuy"){
       balesan = { type: 'text', text: "mabok kok ngaceng" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "gendut"){
+      balesan = { type: 'text', text: "@Thoriq x @Bahri" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "rani"){
       balesan = { type: 'text', text: "@ami \n maaf mi aku sedang berada di mimpinya dwiyan" };
