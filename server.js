@@ -154,7 +154,7 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase() == "berak mi?"){
       const bales = {
                   type: 'image',
-                  originalContentUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
+                  url: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2FAFACF8E0-9CFE-4756-8086-B93914B89731.png?v=1615221153069",
                   size: "full",
                   aspectRatio: "2:1"
                     
