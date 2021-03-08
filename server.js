@@ -38,19 +38,19 @@ function handleEvent(event) {
       balesan = { type: 'text', text: "Raja melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "aib kemal"){
-      balesan = { type: 'text', text: "Guling Guling dulu skuy" };
+      balesan = { type: 'text', text: "wiwiwi.kemal.com (2017)\n Pesen berjer skuy(2018)\n Guling Guling dulu skuy (2019)\n celana uniqlo (2020)\n dah cuk, saya telah menyelesaikan sarjana terapan IT S.Tr.com" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "aib frelly"){
       balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "aib ami"){
-      balesan = { type: 'text', text: "Jangan ganggu kami, aku dan rani saling mencitai" };
+      balesan = { type: 'text', text: "Jangan ganggu kami, aku dan rani saling mencintai" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "aib dwiyan"){
       balesan = { type: 'text', text: "Sedang mencari kerang dalam kamar mandi" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "aib nopal"){
-      balesan = { type: 'text', text: "Palqon" };
+      balesan = { type: 'text', text: "adu pala yok sama gua -palqon" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "aib riskon"){
       balesan = { type: 'text', text: "Garuk teroooos\n anjay galer" };
