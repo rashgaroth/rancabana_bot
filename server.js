@@ -38,7 +38,22 @@ function handleEvent(event) {
       balesan = { type: 'text', text: "Raja melet kita semua" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "aib kemal"){
-      balesan = { type: 'text', text: "wiwiwi.kemal.com (2017)\n Pesen berjer skuy(2018)\n Guling Guling dulu skuy (2019)\n celana uniqlo (2020)\n dah cuk, saya telah menyelesaikan sarjana terapan IT S.Tr.com" };
+      balesan = { type: 'text', text: "wiwiwi kemal .com (2017)\n Pesen berjer skuy(2018)\n Guling Guling dulu skuy (2019)\n celana uniqlo (2020)\n dah cuk, saya telah menyelesaikan sarjana terapan IT S.Tr.com (2021)" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "aib frelly"){
+      balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "frel"){
+      balesan = { type: 'text', text: "apaan anjing" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "nis"){
+      balesan = { type: 'text', text: "sisain risol 2 yak" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "mi"){
+      balesan = { type: 'text', text: "ohh si cupu poker itu?" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "pal"){
+      balesan = { type: 'text', text: "adek lu mana pal? udah ga tahan nih" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "aib frelly"){
       balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
@@ -101,19 +116,11 @@ function handleEvent(event) {
       balesan = { type: 'text', text: event.message.toString() };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "berak mi?"){
-      balesan = { type: 'text', text: "auuuu"
-                // "type": "bubble",
-                // "body": {
-                //   "type": "box",
-                //   "layout": "horizontal",
-                //   "contents": [
-                //     {
-                //       "type": "image",
-                //       "url": "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
-                //       "size": "md"
-                //     }
-                //   ]
-                // }
+      balesan = {
+                  type: "image",
+                  url: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
+                  size: "md"
+                    
                 };
       return client.replyMessage(event.replyToken, balesan);
     }
