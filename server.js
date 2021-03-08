@@ -55,8 +55,23 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase().toLowerCase() == "pal"){
       balesan = { type: 'text', text: "adek lu mana pal? udah ga tahan nih" };
       return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "aib frelly"){
-      balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
+    }else if(event.message.text.toLowerCase().toLowerCase() == "yan"){
+      balesan = { type: 'text', text: "ga ke dufan?" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "syah"){
+      balesan = { type: 'text', text: "muka elap dulu, banyak lendirnya" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "wi"){
+      balesan = { type: 'text', text: "si rere lagi jalan tuh sama mamang somay" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "bil"){
+      balesan = { type: 'text', text: "yoo nanas nya yoo tinggal 1 nih ambil sendiri" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "mal"){
+      balesan = { type: 'text', text: "manusia tercupu" };
+      return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "kon"){
+      balesan = { type: 'text', text: "tol ayam" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase().toLowerCase() == "aib ami"){
       balesan = { type: 'text', text: "Jangan ganggu kami, aku dan rani saling mencintai" };
@@ -97,11 +112,14 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase() == "ngaceng"){
       balesan = { type: 'text', text: "@kemal" };
       return client.replyMessage(event.replyToken, balesan);
+    }else if(event.message.text.toLowerCase().toLowerCase() == "mabok kuy"){
+      balesan = { type: 'text', text: "mabok kok ngaceng" };
+      return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "rani"){
       balesan = { type: 'text', text: "@ami \n maaf mi aku sedang berada di mimpinya dwiyan" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "ajis nisa"){
-      balesan = { type: 'text', text: "Melet-melet" };
+      balesan = { type: 'text', text: "Melet-melet :p" };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "hizrian ucha"){
       balesan = { type: 'text', text: "@dufan_indonesia" };
