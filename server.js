@@ -136,8 +136,9 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase() == "berak mi?"){
       balesan = {
                   type: "image",
-                  url: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
-                  size: "md"
+                  url: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg",
+                  size: "full",
+                  aspectRatio: "2:1"
                     
                 };
       return client.replyMessage(event.replyToken, balesan);
