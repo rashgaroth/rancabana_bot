@@ -100,8 +100,21 @@ function handleEvent(event) {
     }else if(event.message.text.toLowerCase() == "show event"){
       balesan = { type: 'text', text: event.message.toString() };
       return client.replyMessage(event.replyToken, balesan);
-    } else if(event.message.text.toLowerCase() == "berak mi?"){
-      balesan = {}
+    }else if(event.message.text.toLowerCase() == "berak mi?"){
+      balesan = { type: 'text', text: "auuuu"
+                // "type": "bubble",
+                // "body": {
+                //   "type": "box",
+                //   "layout": "horizontal",
+                //   "contents": [
+                //     {
+                //       "type": "image",
+                //       "url": "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
+                //       "size": "md"
+                //     }
+                //   ]
+                // }
+                };
       return client.replyMessage(event.replyToken, balesan);
     }
     else{
