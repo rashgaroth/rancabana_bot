@@ -134,14 +134,14 @@ function handleEvent(event) {
       balesan = { type: 'text', text: event.message.toString() };
       return client.replyMessage(event.replyToken, balesan);
     }else if(event.message.text.toLowerCase() == "berak mi?"){
-      balesan = {
+      const bales = {
                   type: 'image',
                   url: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
                   size: "full",
                   aspectRatio: "2:1"
                     
                 };
-      return client.replyMessage(event.replyToken, balesan);
+      return client.replyMessage(event.replyToken, bales);
     }
     else{
        return
