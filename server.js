@@ -1,173 +1,264 @@
+'use strict';
+
 const line = require('@line/bot-sdk');
 const express = require('express');
-const axios = require('axios');
- 
+var request = require('request');
+var http = require('http');
+
+// create LINE SDK config from env variables
 const config = {
-  channelAccessToken: "2y9YSvPPHfhB2GhTXeIhkGHMOW/YshO9mjU0Lxw4FTLdYFdEEgF9PElNqHJi+HSkYz7G8Ih0OnKrsIDoDRdoQ/uOY391yx1sksOSWYMm1X02f47FfHDVmEokQ5qoXWkS/rfxnamDtGG1fY2CEyS0kwdB04t89/1O/w1cDnyilFU=",
-  channelSecret: "93563e7f80df98c4520d433f55250c9a",
+    channelAccessToken: process.env.CAT,
+    channelSecret: process.env.CS,
 };
- 
+
 // create LINE SDK client
 const client = new line.Client(config);
+
+// create Express app
+// about Express itself: https://expressjs.com/
 const app = express();
- 
+
 // register a webhook handler with middleware
-// about the middleware, please refer to doc
-app.post('/callback', line.middleware(config), (req, res) => {
-  Promise
-    .all(req.body.events.map(handleEvent))
-    .then((result) => res.json(result))
-    .catch((e)=>{
-      console.log(e);
-    });
- 
+app.post('/webhook', line.middleware(config), (req, res) => {
+    Promise
+        .all(req.body.events.map(handleEvent))
+        .then((result) => res.json(result))
+        .catch((err) => {
+            console.error(err);
+            res.status(500).end();
+        });
 });
- 
+
+
+
+setInterval(function() {
+        http.get(process.env.URL);
+    }, 600000); // every 10 minutes
+
+
+// event handler
 function handleEvent(event) {
-    let echo
-    let balesan
-    let bot = "bot"
-  
-    if(event.message.text.toLowerCase() == "hai"){
-      balesan = { type: 'text', text: "Halo juga :), kapan kita kedufan lagi?·" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "Aib nisa".toLowerCase()){
-      balesan = { type: 'text', text: "Ratu melet kita semua" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "aib ajis"){
-      balesan = { type: 'text', text: "Raja melet kita semua" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "aib kemal"){
-      balesan = { type: 'text', text: "wiwiwi kemal .com (2017)\n Pesen berjer skuy(2018)\n Guling Guling dulu skuy (2019)\n celana uniqlo (2020)\n dah cuk, saya telah menyelesaikan sarjana terapan IT S.Tr.com (2021)" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "aib frelly"){
-      balesan = { type: 'text', text: "Si dewa_poker\n korek sering jatoh" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "frel"){
-      balesan = { type: 'text', text: "epi siap epi siap epi siap" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "nis"){
-      balesan = { type: 'text', text: "sisain risol 2 yak" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "jis"){
-      balesan = { type: 'text', text: "tumben ga bawa nasi uduxx" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "mi"){
-      balesan = { type: 'text', text: "kasih video tutorial main poker tuhh" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "pal"){
-      balesan = { type: 'text', text: "adek lu mana pal? udah ga tahan nih" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "yan"){
-      balesan = { type: 'text', text: "ga ke dufan?" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "syah"){
-      balesan = { type: 'text', text: "muka elap dulu, banyak lendirnya" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "wi"){
-      balesan = { type: 'text', text: "si rere lagi jalan tuh sama mamang somay" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "bil"){
-      balesan = { type: 'text', text: "yoo nanas nya yoo tinggal 1 nih ambil sendiri" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "mal"){
-      balesan = { type: 'text', text: "manusia tercupu" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "kon"){
-      balesan = { type: 'text', text: "tol ayam" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "halo mantan"){
-      balesan = { type: 'text', text: "yg mana? yg sampe bikin stiker di motor apa yg rela ga jajan?" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "aib ami"){
-      balesan = { type: 'text', text: "Jangan ganggu kami, aku dan rani saling mencintai" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib dwiyan"){
-      balesan = { type: 'text', text: "Sedang mencari kerang dalam kamar mandi" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib nopal"){
-      balesan = { type: 'text', text: "adu pala yok sama gua -palqon" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "nopal"){
-      balesan = { type: 'text', text: "copot helm pink nya pal, jgn dipake mulu" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib riskon"){
-      balesan = { type: 'text', text: "Garuk teroooos\n anjay galer" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib bahrijar"){
-      balesan = { type: 'text', text: "Diem diem mematikan"};
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib hizrian"){
-      balesan = { type: 'text', text: "Dufan kuy \n  ayam asix" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib bili"){
-      balesan = { type: 'text', text: "Mabskuy dulu bro abis itu solat" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "aib syah"){
-      balesan = { type: 'text', text: "Muka mmk" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "melet kuy"){
-      balesan = { type: 'text', text: "@nisa.\n@Azis" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "anjing"){
-      balesan = { type: 'text', text: "Woi santai dong bangsat" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "memek"){
-      balesan = { type: 'text', text: "@Kominfo @Feminis_indonesia" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "kontol"){
-      balesan = { type: 'text', text: "@naufal" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "ngaceng"){
-      balesan = { type: 'text', text: "@kemal" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "mabok kuy"){
-      balesan = { type: 'text', text: "mabok kok ngaceng" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "gendut"){
-      balesan = { type: 'text', text: "@Thoriq x @Bahri" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "ngopi kuy"){
-      balesan = { type: 'text', text: "kuy, gua bawa gilus nihh" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "rani"){
-      balesan = { type: 'text', text: "@ami \n maaf mi aku sedang berada di mimpinya dwiyan" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "ajis nisa"){
-      balesan = { type: 'text', text: "Melet-melet :p" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "hizrian ucha"){
-      balesan = { type: 'text', text: "@dufan_indonesia" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "pasar minggu"){
-      balesan = { type: 'text', text: "Guling Guling" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "canda ngaceng"){
-      balesan = { type: 'text', text: "Yeuu gua keluarin ni titit gua dengan sempak gua yang super ketat nihh" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase().toLowerCase() == "gajian nih"){
-      balesan = { type: 'text', text: "bos @Dwiyan dan @Hizrian siap traktir" };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "show event"){
-      balesan = { type: 'text', text: event.message.toString() };
-      return client.replyMessage(event.replyToken, balesan);
-    }else if(event.message.text.toLowerCase() == "berak mi?"){
-      const bales = {
-                  type: 'image',
-                  url: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2FAFACF8E0-9CFE-4756-8086-B93914B89731.png?v=1615221153069",
-                  size: "full",
-                  aspectRatio: "2:1"
-                    
+    if (event.type !== 'message' || event.message.type !== 'text') {
+        // ignore non-text-message event
+        
+        return Promise.resolve(null);
+    }
+    var options1 = {
+        method: 'GET',
+        url: 'http://api.susi.ai/susi/chat.json',
+        qs: {
+            timezoneOffset: '-330',
+            q: event.message.text
+        }
+    };
+    
+  if (event.message.text.toLowerCase() === "who febrian?" || event.message.text.toLowerCase() === "Who febrian?"){
+        const answer = {
+          "type": "template",
+          "altText": "Febrian Dwi Putra is humble people with skill programing and design",
+          "template": {
+            "type": "buttons",
+            "actions": [
+              {
+                "type": "uri",
+                "label": "Facebook",
+                "uri": "https://www.facebook.com/febri.krn"
+              },
+              {
+                "type": "uri",
+                "label": "Linkedin",
+                "uri": "https://www.linkedin.com/in/febrian-dwi-putra-026446163"
+              },
+              { "type": "uri",
+                "label": "Github",
+                "uri": "https://github.com/febritecno"
+              }
+            ],
+            "thumbnailImageUrl": "https://avatars2.githubusercontent.com/u/9696688?s=460&v=4",
+            "title": "Febrian Dwi Putra",
+            "text": "People can solve and make your dream realise"
+          }
+        };
+        return client.replyMessage(event.replyToken, answer);
+  }else if (event.message.text.toLowerCase() === "help"){
+        const answer = {
+          "type": "template",
+          "altText": "help about bot",
+          "template": {
+            "type": "buttons",
+            "actions": [
+              {
+                "type": "message",
+                "label": "Show Skill",
+                "text": "what can you do ?"
+              }
+            ],
+            "thumbnailImageUrl": "https://dkru86weszx9t.cloudfront.net/blog/wp-content/uploads/2018/05/how-to-ask-for-help-760x400.jpg",
+            "title": "Show help",
+            "text": "You can get help now"
+          }
+        };
+        return client.replyMessage(event.replyToken, answer);
+    
+    }else if (event.message.text.toLowerCase() === "what can you do ?"){
+        const answer = {
+          "type": "text",
+          "text": "you can visit https://skills.susi.ai/ , then you look example reference my skill. happy chatting :)"
+        };
+        const answer1 = {
+          "type": "sticker",
+          "packageId": "1",
+          "stickerId": "4"
+        };
+        return client.replyMessage(event.replyToken, [answer,answer1]);
+    
+    } else if (event.message.text.toLowerCase() === "") {
+        request(options1, function(error1, response1, body1) {
+            if (error1) throw new Error(error1);
+
+            // answer fetched from api susi
+            var ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+            const sampleQ = [{
+                    type: 'text',
+                    text: ans
+                }
+            ]
+            return client.replyMessage(event.replyToken, sampleQ);
+        });
+    } else {
+        request(options1, function(error1, response1, body1) {
+            if (error1) throw new Error(error1);
+            // answer fetched from api susi
+            var type = (JSON.parse(body1)).answers[0].actions;
+            var ans = (JSON.parse(body1)).answers[0].actions[0].expression;
+            if ( ((JSON.parse(body1)).answers[0].data[0].lon) || ((JSON.parse(body1)).answers[0].data[0].lat) ) {
+                var lat = JSON.parse(body1).answers[0].data[0].lat;
+                var lon = JSON.parse(body1).answers[0].data[0].lon;
+                var address = JSON.parse(body1).answers[0].data[0].locationInfo;
+                var title = JSON.parse(body1).answers[0].data[0][1];
+                const answer = {
+                    type: "location",
+                    title: title,
+                    address: title,
+                    latitude: lat,
+                    longitude: lon
                 };
-      return client.replyMessage(event.replyToken, bales);
-    }
-    else{
-       return
-    }
+                // use reply API
+                return client.replyMessage(event.replyToken, answer)
+                .catch((err) => {
+                    console.log('Error - '+err);
+                });
+            } else if (JSON.parse(body1).answers[0].data[0].type === 'gif') {
+                let videoUrl = JSON.parse(body1).answers[0].data[0].v1.original.mp4;
+                let previewUrl = JSON.parse(body1).answers[0].data[0].images["480w_still"].url;
+                const answer = {
+                    type: 'video',
+                    originalContentUrl: videoUrl,
+                    previewImageUrl: previewUrl
+                };
+                // use reply API
+                return client.replyMessage(event.replyToken, answer)
+                .catch((err) => {
+                    console.log('Error - '+err);
+                });
+            } else if (type.length == 1 && type[0].type == "answer") {
+                let answer;
+                if((JSON.parse(body1)).answers[0].data[0].type === 'photo'){
+                    answer = {
+                        type: 'image',
+                        originalContentUrl: ans,
+                        previewImageUrl: ans
+                    };
+                } else {
+                    answer = {
+                        type: 'text',
+                        text: ans
+                    };
+                }
+                // use reply API
+                return client.replyMessage(event.replyToken, answer);
+
+            } else if (type[0].type == "table") {
+                var data = JSON.parse(body1).answers[0].data;
+                var columns = type[0].columns;
+                var key = Object.keys(columns);
+                var msg = [];
+                console.log(key);
+
+                for (var i = 0; i < 5; i++) {
+                    msg[i] = "";
+                    msg[i] = {
+                        type: 'text',
+                        text: key[0].toUpperCase() + ": " + data[i][key[0]] + "\n" + key[1].toUpperCase() + ": " + data[i][key[1]] + "\n" + key[2].toUpperCase() + ": " + data[i][key[2]]
+                    }
+                }
+                return client.replyMessage(event.replyToken, msg);
+
+            } else if (type.length == 2 && type[1].type == "rss") {
+                var data = JSON.parse(body1).answers[0].data;
+                var columns = type[1];
+                var key = Object.keys(columns);
+                var msg, title, link, query;
+                var carousel = [];
+                console.log(key);
+
+                for (var i = 1; i < 4; i++) {
+                    title = key[1].toUpperCase() + ": " + data[i][key[1]];
+                    query = title;
+                    msg = key[2].toUpperCase() + ": " + data[i][key[2]];
+                    link = data[i][key[3]]
+                    if (title.length >= 40) {
+                        title = title.substring(0, 36);
+                        title = title + "...";
+                    }
+
+                    if (msg.length >= 60) {
+                        msg = msg.substring(0, 56);
+                        msg = msg + "...";
+                    }
+
+                    carousel[i] = {
+                        "title": title,
+                        "text": msg,
+                        "actions": [{
+                                "type": "uri",
+                                "label": "View detail",
+                                "uri": link
+                            },
+                            {
+                                "type": "message",
+                                "label": "Ask Hasana again",
+                                "text": query
+                            }
+                        ]
+                    };
+                }
+                const answer = [{
+                        type: 'text',
+                        text: ans
+                    },
+                    {
+                        "type": "template",
+                        "altText": "Web Search",
+                        "template": {
+                            "type": "carousel",
+                            "columns": [
+                                carousel[1],
+                                carousel[2],
+                                carousel[3]
+                            ]
+                        }
+                    }
+                ]
+                return client.replyMessage(event.replyToken, answer);
+            }
+    })
+  }
 }
- 
+
+
 // listen on port
-const port = 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
-  console.log(`listening on ${port}`);
+    console.log(`listening on ${port}`);
 });
