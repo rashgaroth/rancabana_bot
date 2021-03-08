@@ -175,6 +175,46 @@ function handleEvent(event) {
                   size: "full"
                 };
       return client.replyMessage(event.replyToken, bales);
+    }else if(event.message.text.toLowerCase() == "foto ami"){
+      const bales = {
+                  type: 'image',
+                  originalContentUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
+                  previewImageUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F29373.jpg?v=1615214247673",
+                  size: "full"
+                };
+      return client.replyMessage(event.replyToken, bales);
+    }else if(event.message.text.toLowerCase() == "foto syahri"){
+      const bales = {
+                  type: 'image',
+                  originalContentUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F77768.jpg?v=1615214249226",
+                  previewImageUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F77768.jpg?v=1615214249226",
+                  size: "full"
+                };
+      return client.replyMessage(event.replyToken, bales);
+    }else if(event.message.text.toLowerCase() == "foto naufal"){
+      const bales = {
+                  type: 'image',
+                  originalContentUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F103666.jpg?v=1615214250631",
+                  previewImageUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F103666.jpg?v=1615214250631",
+                  size: "full"
+                };
+      return client.replyMessage(event.replyToken, bales);
+    }else if(event.message.text.toLowerCase() == "foto radila"){
+      const bales = {
+                  type: 'image',
+                  originalContentUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F101123.jpg?v=1615214250274",
+                  previewImageUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F101123.jpg?v=1615214250274",
+                  size: "full"
+                };
+      return client.replyMessage(event.replyToken, bales);
+    }else if(event.message.text.toLowerCase() == "ketiduran"){
+      const bales = {
+                  type: 'image',
+                  originalContentUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F56494.jpg?v=1615214247394",
+                  previewImageUrl: "https://cdn.glitch.com/53ae1b8b-acad-4031-99f3-c24f2119b5ab%2F56494.jpg?v=1615214247394",
+                  size: "full"
+                };
+      return client.replyMessage(event.replyToken, bales);
     }
     else{
        return
